@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150724080348) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "browet_cache", force: :cascade do |t|
     t.string   "path",       null: false
     t.string   "locale"
@@ -22,6 +25,6 @@ ActiveRecord::Schema.define(version: 20150724080348) do
     t.datetime "updated_at"
   end
 
-  add_index "browet_cache", ["path", "locale", "params"], name: "index_browet_cache_on_path_and_locale_and_params", unique: true
+  add_index "browet_cache", ["path", "locale", "params"], name: "index_browet_cache_on_path_and_locale_and_params", unique: true, using: :btree
 
 end
