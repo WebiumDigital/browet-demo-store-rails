@@ -1,0 +1,11 @@
+h2 Products
+h4 
+  | Group: 
+  = link_to @group.name, categories_path(group_slug: @group.slug)
+h4 
+  | Category: 
+  = @category.title
+ul
+  - @products.each do |product|
+    li
+      = link_to product.title, product_path(group_slug: @group.slug, category_slug: @category.slug, product_slug: product.slug)

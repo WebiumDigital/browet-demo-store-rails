@@ -1,0 +1,10 @@
+h2 Products search
+= form_tag('/search') do
+  = text_field_tag :query
+  = submit_tag 'Search!'
+- if @products.present?
+  h4 Search results
+  ul
+    - @products.each do |product|
+      li
+        = link_to product.title, search_result_product_path(product_slug: product.slug)

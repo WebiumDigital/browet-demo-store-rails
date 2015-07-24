@@ -1,0 +1,14 @@
+h2 = @product.title
+- if @group
+  h4 
+    | Group: 
+    = link_to @group.name, categories_path(group_slug: @group.slug)
+- if @category
+  h4 
+    | Category: 
+    = link_to @category.title, products_path(group_slug: @group.slug, category_slug: @category.slug)
+- Browet::Product.attributes.each do |attr|
+  p
+    = attr.to_s.humanize + ":"
+    br
+    = @product.send(attr)
