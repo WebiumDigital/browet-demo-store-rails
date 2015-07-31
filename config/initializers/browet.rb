@@ -18,6 +18,6 @@ Browet.init do |config|
   config.ttl = 10
 
   # Disable cache
-  config.enable_cache = true
+  config.enable_cache = false
 
 end
