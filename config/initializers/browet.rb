@@ -5,10 +5,10 @@ Browet.init do |config|
   config.version_api = 'v1'
 
   # Browet API account
-  config.account = 'account1'
+  config.account = 'demo'
 
   # Browet API tokens
-  config.default_token = 'token11111'
+  config.default_token = 'mMpQWExWMpNw2f4IBvrezw'
   config.localized_tokens = {
     # :ru => 'token for ru locale',
     # :en => 'token for en locale'
@@ -18,6 +18,6 @@ Browet.init do |config|
   config.ttl = 10
 
   # Disable cache
-  config.enable_cache = true
+  config.enable_cache = false
 
 end
