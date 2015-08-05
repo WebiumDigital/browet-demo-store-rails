@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
 
   def index
-    @groups = Browet::Group.list
+    @groups = Browet::CategoryGroup.all
   end
 
 end

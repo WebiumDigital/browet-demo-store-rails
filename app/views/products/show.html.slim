@@ -7,8 +7,14 @@ h2 = @product.title
   h4 
     | Category: 
     = link_to @category.title, products_path(group_slug: @group.slug, category_slug: @category.slug)
-- Browet::Product.attributes.each do |attr|
+- @product.pictures.each do |pic|
+  = image_tag pic.url, style: "max-width: 200px; max-height: 200px;"
+p
+  b Brand
+  br
+  = @product.brand.title
+- [:id, :description, :title, :guid, :sku, :mpn, :slug, :availability, :status, :gtin].each do |attr|
   p
-    = attr.to_s.humanize + ":"
+    b = attr.to_s.humanize + ":"
     br
     = @product.send(attr)

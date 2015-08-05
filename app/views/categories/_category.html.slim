@@ -1,4 +1,4 @@
 li{style="margin-left: #{10*depth}px"}
   = link_to category.title, products_path(group_slug: @group.slug, category_slug: category.slug)
-  - category.subcategories.each do |category|
+  - category.categories.each do |category|
     = render partial: "category", locals: {category: category, depth: depth+1}
